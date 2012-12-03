@@ -105,18 +105,6 @@ nmap <leader>w :set wrap!<CR>
 nmap <leader>k :set list!<CR>
 inoremap <C-tab> <Esc><<i
 
-" use the home row BITCH
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-nnoremap <Left> <NOP>
-nnoremap <Right> <NOP>
-nnoremap <Up> <NOP>
-nnoremap <Down> <NOP>
-nnoremap j gj
-nnoremap k gk
-
 " move between files
 map <C-K> <Esc>:next<CR>
 map <C-J> <Esc>:prev<CR>
