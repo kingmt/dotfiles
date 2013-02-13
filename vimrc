@@ -45,19 +45,19 @@ set title                       " set the title
 " load all the things (vundle)
 filetype off                   
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'pangloss/vim-javascript'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
+" 
+" Bundle 'gmarik/vundle'
+" Bundle 'tpope/vim-haml'
+" Bundle 'tpope/vim-rails'
+" Bundle 'pangloss/vim-javascript'
+" Bundle 'scrooloose/nerdcommenter'
+" Bundle 'scrooloose/nerdtree'
+" Bundle 'Lokaltog/vim-powerline'
+" Bundle 'kien/rainbow_parentheses.vim'
+" Bundle 'kien/ctrlp.vim'
+" Bundle 'ervandew/supertab'
 
 filetype plugin indent on
 

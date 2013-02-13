@@ -14,5 +14,6 @@ for file in ~/dotfiles/bash/{bash_prompt,exports,functions,aliases}; do
 done
 unset file
 
+source /etc/profile
 # fix font smoothing on macs
 # defaults -currentHost write -g AppleFontSmoothing -int 2
