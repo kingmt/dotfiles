@@ -15,6 +15,10 @@ ln -sf  "$FOLDER"/irbrc         ~/.irbrc
 ln -sf  "$FOLDER"/gitconfig     ~/.gitconfig
 echo    "Setup symlinks"
 
+echo    "Setup system symlinks - need sudo"
+sudo ln -s "$FOLDER"/usr/local/bin/* /usr/local/bin
+
+
 # reload tmux config
 tmux source-file ~/.tmux.conf
 echo "Reload tmux config"
