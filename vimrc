@@ -120,6 +120,7 @@ function! StripWhitespace ()
     call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace ()<CR>
+autocmd FileType * autocmd BufWritePre <buffer> :call StripWhitespace()
 
 " newline on shift/enter
 map <S-Enter> O<Esc>j
