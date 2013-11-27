@@ -18,5 +18,8 @@
   untracked = cyan
 [merge]
   log = true
+  tool = vimdiff
 [rerere]
   enabled = 1
+[core]
+  editor = vim
