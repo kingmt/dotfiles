@@ -43,11 +43,11 @@ set tags=~/.tags                " grab tags directory, all the way up to root
 set title                       " set the title
 
 " load all the things (vundle)
-filetype off                   
+filetype off
 
 " set rtp+=~/.vim/bundle/vundle/
 " call vundle#rc()
-" 
+"
 " Bundle 'gmarik/vundle'
 " Bundle 'tpope/vim-haml'
 " Bundle 'tpope/vim-rails'
@@ -72,7 +72,7 @@ if has('autocmd')
 
   au BufNewFile,BufRead *.erb set filetype=html
   au BufNewFile,BufRead *.tpl set filetype=ruby
-  au BufRead,BufNewFile *.todo setfiletype todo 
+  au BufRead,BufNewFile *.todo setfiletype todo
   au BufRead,BufNewFile Rakefile,Capfile,Gemfile,.autotest,.irbrc,*.treetop,*.tt set ft=ruby syntax=ruby
 endif
 
@@ -152,7 +152,7 @@ set hlsearch
 map <Leader>j <C-w>j
 map <Leader>k <C-w>k
 map <Leader>l <C-w>l
-map <Leader>h <C-w>h 
+map <Leader>h <C-w>h
 
 " nerdtree
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
@@ -214,11 +214,11 @@ let g:ctrlp_max_files =0
 let g:ctrlp_max_depth =1000
 let g:ctrlp_max_height = 50
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_clear_cache_on_exit = 0 
+let g:ctrlp_clear_cache_on_exit = 0
 
 let g:CommandTMaxFiles=50000
 let g:ctrlp_open_multiple_files = 't'
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-  \} 
+  \}
