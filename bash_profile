@@ -15,5 +15,7 @@ done
 unset file
 
 source /etc/profile
+source /usr/share/git-core/git-completion.bash
 # fix font smoothing on macs
 # defaults -currentHost write -g AppleFontSmoothing -int 2
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/heroku/bin:/usr/lib:/Users/mking/bin:/Users/mking/.rvm/bin:/Users/mking/.rvm/gems/ruby-1.9.3-p448/bin:/Users/mking/.rvm/gems/ruby-1.9.3-p448@global/bin:/Users/mking/.rvm/rubies/ruby-1.9.3-p448/bin
