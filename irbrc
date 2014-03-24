@@ -12,7 +12,7 @@ end
 
 begin
   require 'hirb'
-  Hirb.enable
+  Hirb.enable :output=>{'Object'=>{:class=>:auto_table, :ancestor=>true}}
   extend Hirb::Console
 rescue LoadError
   puts "*** hirb disabled ***"

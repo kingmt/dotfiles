@@ -1,0 +1,1 @@
+../bundle/xmledit/ftplugin/php.vim

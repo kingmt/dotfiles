@@ -1,0 +1,3 @@
+[submodule "vim/bundle/xml-plugin"]
+	path = vim/bundle/xml-plugin
+	url = https://github.com/sukima/xmledit.git

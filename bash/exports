@@ -26,8 +26,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # path
-export PATH=/usr/lib:~/bin:/usr/local/bin:~/.rvm/bin:$PATH
+export PATH=/usr/local/bin:/foo:/usr/lib:~/bin:~/.rvm/bin:$PATH
 
 # heroku toolbelt
-export PATH="/usr/local/heroku/bin:$PATH" 
- 
+#export PATH="/usr/local/heroku/bin:$PATH"
+

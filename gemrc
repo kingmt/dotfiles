@@ -1,10 +1,33 @@
----
-:update_sources: true
-:bulk_threshold: 1000
-:sources:
+--- 
+:verbose: true
+:backtrace: false
+uninstall: -a -I -x
+:benchmark: false
+:sources: 
 - http://rubygems.org/
 - http://gems.github.com
-:backtrace: false
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
+- http://gems.github.com
 gem: --no-ri --no-rdoc
-:verbose: true
-:benchmark: false
+:update_sources: true
+:bulk_threshold: 1000

@@ -13,6 +13,8 @@ set directory=~/.vimtmp         " put tmp files in one place
 set dir=~/.vimtmp               " for backup swaps
 set noswapfile                  " wait wat
 set hidden                      " hide buffers, rather than closing them
+set ruler                       " show the cursor position all the time
+set laststatus=2                " always show statusbar
 set modelines=0                 " don't allow modelines
 set smartindent                 " let vim indent for you
 set autoindent                  " always set autoindenting on
@@ -25,7 +27,7 @@ set ignorecase                  " ignore case when searching
 set smartcase                   " ignore search case if all lowercase
 set hlsearch                    " highlight search terms
 set gdefault                    " default to global replace
-set virtualedit=all             " free cursor mode
+" set virtualedit=all             " free cursor mode
 set wrap!                       " no wordwrap
 set backspace=eol,start,indent  " allow backspace to delete linebreaks
 set scrolloff=10                " have 3 lines of offset (or buffer) when scrolling
@@ -45,12 +47,15 @@ set title                       " set the title
 " load all the things (vundle)
 filetype off
 
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
-"
-" Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+" Bundle 'Valloric/YouCompleteMe'
 " Bundle 'tpope/vim-haml'
-" Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-fugitive'
+Bundle 'sukima/xmledit'
 " Bundle 'pangloss/vim-javascript'
 " Bundle 'scrooloose/nerdcommenter'
 " Bundle 'scrooloose/nerdtree'
@@ -58,7 +63,9 @@ filetype off
 " Bundle 'kien/rainbow_parentheses.vim'
 " Bundle 'kien/ctrlp.vim'
 " Bundle 'ervandew/supertab'
+Bundle 'kchmck/vim-coffee-script'
 
+syntax enable
 filetype plugin indent on
 
 " file type detection
@@ -121,6 +128,7 @@ function! StripWhitespace ()
 endfunction
 noremap <leader>ss :call StripWhitespace ()<CR>
 autocmd FileType * autocmd BufWritePre <buffer> :call StripWhitespace()
+autocmd BufWritePost *.coffee silent make!
 
 " newline on shift/enter
 map <S-Enter> O<Esc>j
@@ -187,28 +195,10 @@ function! SetCursorPosition()
 endfunction
 
 " ctrl p for cnuapp
-set wildignore+=/media/**,*//home/alan/media/**,*//home/alan/Music/**,*/*.scssc
 "set wildignore+=*/.git/* " This line breaks fugitive.vim
 set wildignore+=*.pyc,*/*.scssc
-set wildignore+=*/cabar/*,*/cnu_active_record/*,*/cnuapp_ci/*,*/cnuapp_doc/*,*/cnuapp_env/*
-set wildignore+=*/cnuapp_qa/*,*/cnuapp_rack/*,*/cnu_bloom/*,*/cnu_brand/*,*/cnu_cluster/*
-set wildignore+=*/cnu_config/*,*/cnu_content/*,*/cnu_database/*,*/cnu_gems/*,*/cnu_ivr/*
-set wildignore+=*/cnu_ldap/*,*/cnu_locale/*,*/cnu_logger/*,*/cnu_memcache/*,*/cnu_perf/*
-set wildignore+=*/cnu_pg/*,*/cnu_product_offering/*,*/cnu_rails_app/*,*/cnu_regexp/*
-set wildignore+=*/cnu_ruby_build/*,*/cnu_ruby_core/*,*/cnu_ruby_lib/*,*/cnu_scm/*
-set wildignore+=*/cnu_selenium/*,*/cnu_service/*,*/cnu_space/*,*/cnu_test/*,*/contenter_api/*
 set wildignore+=*/cookbooks/*,*/db_global/*,*/doc/*,*/enf_app/*,*/enf_log/*,*/lsws-3.3.14/*
-set wildignore+=*/mod_rails/*,*/rails-1.2/*,*/red_steak/*,*/screenshots/*,*/shout_trace/*
-set wildignore+=*/sol_api/*,*/trick_serial/*,*/waffles/*,*/wtf/*
 set wildignore+=*static/CACHE/css/*
-set wildignore+=*/cnuapp/apache/*,*/cnuapp/bin/*
-set wildignore+=*/cnuapp/debian/*,*/cnuapp/gems/*,*/cnuapp/gui/*,*/cnuapp/include/*
-set wildignore+=*/cnuapp/locproot/*,*/cnuapp/lsws/*,*/cnuapp/noderoot/*
-set wildignore+=*/cnuapp/plugins/*,*/cnuapp/queries/*,*/cnuapp/Rakefile/*,*/cnuapp/Rakefile.US/*
-set wildignore+=*/cnuapp/result.GB/*,*/cnuapp/result.GB.fail/*,*/cnuapp/result.GB.last/*
-set wildignore+=*/cnuapp/result.GB.pass/*,*/cnuapp/script/*,*/cnuapp/src/*
-set wildignore+=*/cnuapp/tmp/*,*/cnuapp/tools/*,*/cnuapp/typeroot/*,*/cnuapp/var/*
-set wildignore+=*/cnuapp/vendor/*
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 
 let g:ctrlp_max_files =0
@@ -223,3 +213,7 @@ let g:ctrlp_open_multiple_files = 't'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$',
   \}
+
+set colorcolumn=80
+highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+match OverLength /\%>80v.\+/
