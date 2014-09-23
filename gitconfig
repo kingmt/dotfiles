@@ -25,3 +25,5 @@
   editor = vim
 [alias]
   unstage = reset HEAD --
+[push]
+	default = simple
