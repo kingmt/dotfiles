@@ -47,7 +47,7 @@ set title                       " set the title
 " load all the things (vundle)
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -64,6 +64,7 @@ Bundle 'sukima/xmledit'
 " Bundle 'kien/ctrlp.vim'
 " Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'slim-template/vim-slim'
 
 syntax enable
 filetype plugin indent on
