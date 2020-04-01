@@ -36,7 +36,6 @@ set wildmenu                    " make tab completion for files/buffers act like
 set wildmode=list:full          " show a list when pressing tab and complete first full match
 set pastetoggle=<F2>            " toggle paste indentation w/ F2
 set clipboard+=unnamed          " share clipboard
-set clipboard=unnamed           " please work
 set more                        " page on extended output
 set ttyfast                     " smoother redraws
 set lazyredraw                  " do not redraw while executing macros
@@ -47,15 +46,15 @@ set title                       " set the title
 " load all the things (vundle)
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#rc()
 
-Bundle 'gmarik/vundle'
+"Bundle 'gmarik/vundle'
 " Bundle 'Valloric/YouCompleteMe'
 " Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-fugitive'
-Bundle 'sukima/xmledit'
+"Bundle 'tpope/vim-rails'
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'sukima/xmledit'
 " Bundle 'pangloss/vim-javascript'
 " Bundle 'scrooloose/nerdcommenter'
 " Bundle 'scrooloose/nerdtree'
@@ -63,8 +62,8 @@ Bundle 'sukima/xmledit'
 " Bundle 'kien/rainbow_parentheses.vim'
 " Bundle 'kien/ctrlp.vim'
 " Bundle 'ervandew/supertab'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'slim-template/vim-slim'
+"Bundle 'kchmck/vim-coffee-script'
+"Bundle 'slim-template/vim-slim'
 
 syntax enable
 filetype plugin indent on
@@ -111,6 +110,7 @@ noremap Y $
 noremap T ^
 nmap <leader>w :set wrap!<CR>
 nmap <leader>k :set list!<CR>
+nmap =j :%!python -c "import json, sys, collections; print json.dumps(json.load(sys.stdin, object_pairs_hook=collections.OrderedDict), indent=2)"<CR>
 inoremap <C-tab> <Esc><<i
 
 " move between files
@@ -215,6 +215,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$',
   \}
 
-set colorcolumn=80
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-match OverLength /\%>80v.\+/
+" set colorcolumn=80
+" highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+" match OverLength /\%>80v.\+/
